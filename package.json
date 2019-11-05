@@ -1,0 +1,24 @@
+{
+  "name": "has-scroll-hook",
+  "version": "1.0.0",
+  "description": "A boolean scroll position React hook.",
+  "main": "useHasScroll.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iRyanBell/has-scroll-hook.git"
+  },
+  "keywords": [
+    "react",
+    "scroll",
+    "hook"
+  ],
+  "author": "iRyanBell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iRyanBell/has-scroll-hook/issues"
+  },
+  "homepage": "https://github.com/iRyanBell/has-scroll-hook#readme"
+}
