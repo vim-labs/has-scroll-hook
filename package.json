@@ -1,6 +1,6 @@
 {
   "name": "has-scroll-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A boolean scroll position React hook.",
   "main": "useHasScroll.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iRyanBell/has-scroll-hook.git"
+    "url": "git+https://github.com/vim-labs/has-scroll-hook.git"
   },
   "keywords": [
     "react",
