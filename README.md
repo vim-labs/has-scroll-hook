@@ -1,6 +1,6 @@
 # has-scroll-hook
-A boolean scroll position React hook.
 
+A boolean scroll position React hook.
 
 ## Installation:
 
@@ -11,7 +11,7 @@ yarn add has-scroll-hook # Or, npm install has-scroll-hook
 ## Usage:
 
 ```javascript
-import useHasScroll from "has-scroll-hook";
+import { useHasScroll } from "has-scroll-hook";
 
 ...
 
