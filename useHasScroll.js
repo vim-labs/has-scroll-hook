@@ -1,26 +1,28 @@
 import { useState, useEffect } from "react";
 
 export const useHasScroll = () => {
-  const [scroll, setScroll] = useState(false);
+  /* Returns a boolean value based on the window's Y-axis scrollbar. */
+  /* True: The vertical scrollbar has a position greater than 0. */
+  /* False: The vertical scrollbar is at the top of the page. */
 
-  /* Check if the scrollbar has an offset. */
-  const hasScroll = () => Boolean(window.scrollY);
+  const [hasScroll, setHasScroll] = useState(false);
+  const getIsVerticallyScrolled = () => Boolean(window.scrollY);
 
   useEffect(() => {
-    const onScroll = () => {
-      /* Update the state when the scroll position changes. */
-      scroll !== hasScroll() && setScroll(hasScroll());
-    };
+    /* Callback to compare hasScroll state to window.scrollY and commit changes. */
+    const handleScrollUpdate = () =>
+      hasScroll !== getIsVerticallyScrolled() &&
+      setHasScroll(getIsVerticallyScrolled());
 
     /* Set the initial scroll state and listen for changes. */
-    onScroll();
-    document.addEventListener("scroll", onScroll);
+    handleScrollUpdate();
+    document.addEventListener("scroll", handleScrollUpdate);
 
     return () => {
       /* Clean up the scroll event listener. */
-      document.removeEventListener("scroll", onScroll);
+      document.removeEventListener("scroll", handleScrollUpdate);
     };
-  }, [scroll, setScroll]);
+  }, [hasScroll, setHasScroll]);
 
-  return scroll;
+  return hasScroll;
 };
