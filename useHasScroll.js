@@ -12,12 +12,12 @@ export const useHasScroll = () => {
       scroll !== hasScroll() && setScroll(hasScroll());
     };
 
-    /* Set the initial scroll state. */
+    /* Set the initial scroll state and listen for changes. */
     onScroll();
     document.addEventListener("scroll", onScroll);
 
     return () => {
-      /* Clean up the event listener. */
+      /* Clean up the scroll event listener. */
       document.removeEventListener("scroll", onScroll);
     };
   }, [scroll, setScroll]);
