@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 
 export const useHasScroll = () => {
-  /* Check initial scroll position and set state */
+  /* Check if the scrollbar has an offset. */
   const hasScroll = () => Boolean(window.scrollY);
-  const [scroll, setScroll] = useState(hasScroll());
+  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      /* Update scroll state */
+      /* Update the state when the scroll position changes. */
       scroll !== hasScroll() && setScroll(hasScroll());
     };
 
+    /* Set the initial scroll state. */
+    onScroll();
     document.addEventListener("scroll", onScroll);
 
     return () => {
-      /* Clean up */
+      /* Clean up the event listener. */
       document.removeEventListener("scroll", onScroll);
     };
   }, [scroll, setScroll]);
