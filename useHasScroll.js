@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 
 export const useHasScroll = () => {
+  const [scroll, setScroll] = useState(false);
+
   /* Check if the scrollbar has an offset. */
   const hasScroll = () => Boolean(window.scrollY);
-  const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
